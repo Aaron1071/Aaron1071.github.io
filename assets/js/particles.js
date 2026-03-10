@@ -12,7 +12,7 @@ export function initParticles() {
     maxDist: 130,
     speed: 0.4,
     mouseRepel: 100,
-    colors: ['#00f5ff', '#7b2fff', '#00ff88', 'rgba(255,255,255,0.8)'],
+    colors: ['#ff9500', '#c800ff', '#00e5b0', 'rgba(255,255,255,0.8)'],
   };
 
   let mouse = { x: null, y: null };
@@ -96,7 +96,7 @@ export function initParticles() {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(0,245,255,${alpha})`;
+          ctx.strokeStyle = `rgba(255,149,0,${alpha})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }

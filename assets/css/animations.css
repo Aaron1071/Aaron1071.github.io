@@ -37,13 +37,13 @@
 /* Neon pulse */
 @keyframes pulse-neon {
   0%, 100% { box-shadow: var(--glow-cyan); }
-  50%       { box-shadow: 0 0 40px rgba(0,245,255,0.7), 0 0 80px rgba(0,245,255,0.4); }
+  50%       { box-shadow: 0 0 40px rgba(255,149,0,0.7), 0 0 80px rgba(255,149,0,0.4); }
 }
 
 /* Green pulse */
 @keyframes pulse-green {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(0,255,136,0.5); }
-  50%       { box-shadow: 0 0 0 6px rgba(0,255,136,0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,229,176,0.5); }
+  50%       { box-shadow: 0 0 0 6px rgba(0,229,176,0); }
 }
 
 /* Float */
