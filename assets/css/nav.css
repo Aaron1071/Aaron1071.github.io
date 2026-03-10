@@ -24,8 +24,8 @@
   transition: var(--transition);
 }
 .navbar.scrolled {
-  background: rgba(8,8,16,0.92);
-  border-bottom-color: rgba(0,245,255,0.25);
+  background: rgba(8,8,14,0.92);
+  border-bottom-color: rgba(255,149,0,0.25);
 }
 
 .nav-container {

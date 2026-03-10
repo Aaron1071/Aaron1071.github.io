@@ -38,8 +38,8 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--clr-cyan);
-  background: rgba(0,245,255,0.04);
-  box-shadow: 0 0 0 3px rgba(0,245,255,0.1);
+  background: rgba(255,149,0,0.04);
+  box-shadow: 0 0 0 3px rgba(255,149,0,0.1);
 }
 .form-group input::placeholder,
 .form-group textarea::placeholder {
@@ -74,7 +74,7 @@
 .social-link:hover {
   border-color: var(--clr-cyan);
   color: var(--clr-cyan);
-  background: rgba(0,245,255,0.06);
+  background: rgba(255,149,0,0.06);
   transform: translateX(6px);
   box-shadow: var(--glow-cyan);
 }

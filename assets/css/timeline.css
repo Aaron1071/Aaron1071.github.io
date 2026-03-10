@@ -65,7 +65,7 @@
   max-width: 380px;
 }
 .timeline-item:hover .timeline-card {
-  border-color: rgba(0,245,255,0.3);
+  border-color: rgba(255,149,0,0.3);
   box-shadow: 0 10px 40px rgba(0,0,0,0.4), var(--glow-cyan);
   transform: translateY(-4px);
 }
