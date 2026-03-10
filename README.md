@@ -70,7 +70,7 @@ All colors are CSS variables in `assets/css/main.css`:
 ```css
 --clr-cyan:   #00f5ff;   /* Primary accent */
 --clr-purple: #7b2fff;   /* Secondary accent */
---clr-green:  #00ff88;   /* Status/success */
+--clr-green:  #00e5b0;   /* Status/success */
 --clr-pink:   #ff2d78;   /* Error/hard difficulty */
 ```
 
