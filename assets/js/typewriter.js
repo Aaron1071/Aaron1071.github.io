@@ -6,6 +6,17 @@ export function initTypewriter(elementId, strings, options = {}) {
   const el = document.getElementById(elementId);
   if (!el) return;
 
+  const defaults = [
+    'CTF Player',
+    'Bug Hunter',
+    'Malware Analyst',
+    'Pen Tester',
+    'Reverse Engineer',
+    'Packet Sniffer',
+  ];
+
+  const list = (strings && strings.length) ? strings : defaults;
+
   const config = {
     typeSpeed:   65,
     deleteSpeed: 35,
@@ -19,7 +30,7 @@ export function initTypewriter(elementId, strings, options = {}) {
   let isDeleting = false;
 
   function tick() {
-    const str = strings[current % strings.length];
+    const str = list[current % list.length];
 
     if (!isDeleting) {
       el.textContent = str.slice(0, ++charIdx);

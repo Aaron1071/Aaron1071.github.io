@@ -1,26 +1,67 @@
 [
   {
     "id": 1,
-    "title": "Getting Started — My First CTF Writeup",
-    "slug": "first-ctf",
-    "category": "CTF",
-    "difficulty": "Easy",
-    "date": "2026-03-10",
-    "excerpt": "My first ever CTF challenge. A beginner-friendly web challenge involving simple XSS and basic recon. Here's how I solved it step by step.",
-    "tags": ["XSS", "Recon", "Web", "Beginner"],
-    "link": "writeups/first-ctf.html",
-    "coming_soon": true
+    "title": "SQL Injection via Time-Based Blind Attack",
+    "slug": "sqli-time-based",
+    "category": "Web",
+    "difficulty": "Medium",
+    "date": "2024-11-12",
+    "excerpt": "Exploiting a login form with no visible errors using time delays to dump the user table.",
+    "tags": ["SQLi", "Web", "WAF Bypass", "HackTheBox"],
+    "platform": "HackTheBox",
+    "link": "writeups/sqli-time-based.html",
+    "coming_soon": false
   },
   {
     "id": 2,
-    "title": "SQL Injection — From Basics to Bypass",
-    "slug": "sqli-basics",
+    "title": "Cracking a Custom PE Packer with Ghidra",
+    "slug": "pe-packer-ghidra",
+    "category": "Rev",
+    "difficulty": "Hard",
+    "date": "2024-10-05",
+    "excerpt": "Deobfuscating a custom PE packer, tracing the unpacking stub, and dumping the original payload.",
+    "tags": ["Reverse Engineering", "Ghidra", "x64dbg", "CTF"],
+    "platform": "CTF",
+    "link": "writeups/pe-packer-ghidra.html",
+    "coming_soon": false
+  },
+  {
+    "id": 3,
+    "title": "ret2libc Stack Smash on x86-64",
+    "slug": "ret2libc-x64",
+    "category": "Pwn",
+    "difficulty": "Hard",
+    "date": "2024-09-20",
+    "excerpt": "Bypassing NX+PIE to get a shell via ret2libc with a GOT leak.",
+    "tags": ["Pwn", "ROP", "pwntools", "CTF"],
+    "platform": "CTF",
+    "link": "writeups/ret2libc-x64.html",
+    "coming_soon": false
+  },
+  {
+    "id": 4,
+    "title": "DNS Beaconing C2 — PCAP Forensics",
+    "slug": "dns-beaconing-pcap",
+    "category": "Forensics",
+    "difficulty": "Medium",
+    "date": "2024-08-14",
+    "excerpt": "Identifying periodic DNS C2 traffic and decoding exfiltrated data from a suspicious PCAP.",
+    "tags": ["Forensics", "PCAP", "Wireshark", "C2"],
+    "platform": "Personal Lab",
+    "link": "writeups/dns-beaconing-pcap.html",
+    "coming_soon": false
+  },
+  {
+    "id": 5,
+    "title": "SSRF to AWS IMDSv1 Metadata Exfil",
+    "slug": "ssrf-aws-imds",
     "category": "Web",
     "difficulty": "Medium",
-    "date": "2026-03-10",
-    "excerpt": "A deep dive into SQL injection — UNION attacks, blind SQLi, and WAF bypass techniques. Documented for the community.",
-    "tags": ["SQLi", "Web", "OWASP", "Bypass"],
-    "link": "writeups/sqli-basics.html",
-    "coming_soon": true
+    "date": "2024-07-03",
+    "excerpt": "Chaining a URL fetch feature with SSRF to reach the AWS metadata endpoint and extract IAM credentials.",
+    "tags": ["SSRF", "AWS", "Cloud", "HackTheBox"],
+    "platform": "HackTheBox",
+    "link": "writeups/ssrf-aws-imds.html",
+    "coming_soon": false
   }
 ]

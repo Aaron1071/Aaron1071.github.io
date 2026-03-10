@@ -8,16 +8,15 @@ export function initParticles() {
   const ctx = canvas.getContext('2d');
 
   const config = {
-    count: 120,
+    count: 80,
     maxDist: 130,
-    speed: 0.4,
+    speed: 0.35,
     mouseRepel: 100,
-    colors: ['#00f5ff', '#7b2fff', '#00e5b0', 'rgba(255,255,255,0.8)'],
+    colors: ['#adff2f', '#c5e0f5', 'rgba(173,255,47,0.6)', 'rgba(197,224,245,0.4)'],
   };
 
   let mouse = { x: null, y: null };
   let particles = [];
-  let animId;
   let paused = false;
 
   function resize() {
@@ -45,9 +44,9 @@ export function initParticles() {
       this.y  = Math.random() * canvas.height;
       this.vx = (Math.random() - 0.5) * config.speed;
       this.vy = (Math.random() - 0.5) * config.speed;
-      this.r  = Math.random() * 1.8 + 0.8;
+      this.r  = Math.random() * 1.5 + 0.5;
       this.color = config.colors[Math.floor(Math.random() * config.colors.length)];
-      this.alpha = Math.random() * 0.5 + 0.3;
+      this.alpha = Math.random() * 0.4 + 0.2;
     }
     update() {
       if (mouse.x !== null) {
@@ -60,12 +59,10 @@ export function initParticles() {
           this.vy += (dy / dist) * force * 0.6;
         }
       }
-      // dampen
       this.vx *= 0.98;
       this.vy *= 0.98;
       this.x += this.vx;
       this.y += this.vy;
-      // wrap
       if (this.x < 0) this.x = canvas.width;
       if (this.x > canvas.width) this.x = 0;
       if (this.y < 0) this.y = canvas.height;
@@ -92,11 +89,11 @@ export function initParticles() {
         const dy = particles[i].y - particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < config.maxDist) {
-          const alpha = (1 - dist / config.maxDist) * 0.4;
+          const alpha = (1 - dist / config.maxDist) * 0.3;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(0,245,255,${alpha})`;
+          ctx.strokeStyle = `rgba(173,255,47,${alpha})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -109,7 +106,7 @@ export function initParticles() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     particles.forEach(p => { p.update(); p.draw(); });
     drawConnections();
-    animId = requestAnimationFrame(animate);
+    requestAnimationFrame(animate);
   }
 
   initParticleArray();

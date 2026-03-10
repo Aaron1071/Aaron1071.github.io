@@ -6,17 +6,12 @@ export function initNav() {
   const navbar    = document.getElementById('navbar');
   const hamburger = document.getElementById('hamburger');
   const overlay   = document.getElementById('mobileOverlay');
-  const progress  = document.getElementById('scrollProgress');
   const navLinks  = document.querySelectorAll('.nav-link');
   const sections  = document.querySelectorAll('section[id]');
 
   /* ── Scroll events ── */
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    const total   = document.body.scrollHeight - window.innerHeight;
-
-    // Progress bar
-    progress.style.width = `${(scrollY / total) * 100}%`;
 
     // Navbar solid
     navbar.classList.toggle('scrolled', scrollY > 50);
