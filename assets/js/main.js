@@ -54,13 +54,15 @@ function animCounter(el, target, duration = 1800) {
   requestAnimationFrame(step);
 }
 
+const STATS = { writeups: 5, ctf: 8, cve: 3 };
+
 function initCounters() {
   const cw = document.getElementById('c-writeups');
   const cc = document.getElementById('c-ctf');
   const cv = document.getElementById('c-cve');
-  if (cw) animCounter(cw, 5);
-  if (cc) animCounter(cc, 8);
-  if (cv) animCounter(cv, 3);
+  if (cw) animCounter(cw, STATS.writeups);
+  if (cc) animCounter(cc, STATS.ctf);
+  if (cv) animCounter(cv, STATS.cve);
 }
 
 /* ── Ticker ── */
@@ -125,7 +127,9 @@ function initRadar() {
   const canvas = document.getElementById('radar-canvas');
   if (!canvas) return;
   const ctx  = canvas.getContext('2d');
-  const size = canvas.width = canvas.height = Math.min(window.innerWidth * .6, 700);
+  const RADAR_VIEWPORT_RATIO = 0.6;
+  const MAX_RADAR_SIZE = 700;
+  const size = canvas.width = canvas.height = Math.min(window.innerWidth * RADAR_VIEWPORT_RATIO, MAX_RADAR_SIZE);
   const cx = size / 2, cy = size / 2, maxR = size / 2;
   let angle = 0;
 
