@@ -1,0 +1,130 @@
+/* ═══════════════════════════════════════════
+   ANIMATIONS.CSS — All keyframes
+═══════════════════════════════════════════ */
+
+/* Glitch */
+@keyframes glitch-skew {
+  0%   { transform: skew(-0.5deg, -0.5deg); }
+  20%  { transform: skew(0.4deg, 0deg); }
+  40%  { transform: skew(-0.2deg, 0.2deg); }
+  60%  { transform: skew(0.3deg, -0.3deg); }
+  80%  { transform: skew(-0.1deg, 0.1deg); }
+  100% { transform: skew(0deg, 0deg); }
+}
+@keyframes glitch-1 {
+  0%   { clip-path: inset(40% 0 61% 0); transform: translate(-3px, 0); }
+  20%  { clip-path: inset(92% 0 1% 0);  transform: translate(3px, 0); }
+  40%  { clip-path: inset(43% 0 1% 0);  transform: translate(-2px, 0); }
+  60%  { clip-path: inset(25% 0 58% 0); transform: translate(2px, 0); }
+  80%  { clip-path: inset(54% 0 7% 0);  transform: translate(-1px, 0); }
+  100% { clip-path: inset(58% 0 43% 0); transform: translate(0, 0); }
+}
+@keyframes glitch-2 {
+  0%   { clip-path: inset(25% 0 58% 0); transform: translate(3px, 0); }
+  20%  { clip-path: inset(54% 0 7% 0);  transform: translate(-3px, 0); }
+  40%  { clip-path: inset(58% 0 43% 0); transform: translate(2px, 0); }
+  60%  { clip-path: inset(40% 0 61% 0); transform: translate(-2px, 0); }
+  80%  { clip-path: inset(92% 0 1% 0);  transform: translate(1px, 0); }
+  100% { clip-path: inset(43% 0 1% 0);  transform: translate(0, 0); }
+}
+
+/* Scanline CRT */
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Neon pulse */
+@keyframes pulse-neon {
+  0%, 100% { box-shadow: var(--glow-cyan); }
+  50%       { box-shadow: 0 0 40px rgba(0,245,255,0.7), 0 0 80px rgba(0,245,255,0.4); }
+}
+
+/* Green pulse */
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,255,136,0.5); }
+  50%       { box-shadow: 0 0 0 6px rgba(0,255,136,0); }
+}
+
+/* Float */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+/* Cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Scroll indicator */
+@keyframes scroll-bounce {
+  0%   { transform: translateY(0) rotate(45deg); opacity: 0; }
+  50%  { opacity: 1; }
+  100% { transform: translateY(8px) rotate(45deg); opacity: 0; }
+}
+
+/* Border gradient rotate */
+@keyframes border-spin {
+  to { --border-angle: 360deg; }
+}
+
+/* Fade in up */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Timeline line draw */
+@keyframes draw-line {
+  from { height: 0; }
+  to   { height: 100%; }
+}
+
+/* Matrix rain fall */
+@keyframes matrix-fall {
+  0%   { transform: translateY(-100%); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Gradient border */
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* Card hover tilt handled in JS */
+
+/* Terminal lines stagger */
+.t-line-1  { animation: fade-up 0.4s ease 0.3s both; }
+.t-line-2  { animation: fade-up 0.4s ease 0.6s both; }
+.t-line-3  { animation: fade-up 0.4s ease 0.9s both; }
+.t-line-4  { animation: fade-up 0.4s ease 1.1s both; }
+.t-line-5  { animation: fade-up 0.4s ease 1.3s both; }
+.t-line-6  { animation: fade-up 0.4s ease 1.5s both; }
+.t-line-7  { animation: fade-up 0.4s ease 1.7s both; }
+.t-line-8  { animation: fade-up 0.4s ease 2.0s both; }
+
+/* Scanline overlay */
+.scanline-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0,0,0,0.08) 2px,
+    rgba(0,0,0,0.08) 4px
+  );
+  opacity: 0.5;
+}
+
+/* Logo cursor blink */
+.logo-cursor { animation: blink 1s step-end infinite; color: var(--clr-green); }
+
+/* Typewriter cursor */
+.typewriter-cursor { animation: blink 0.8s step-end infinite; color: var(--clr-cyan); }

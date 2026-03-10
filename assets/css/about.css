@@ -1,0 +1,95 @@
+/* ═══════════════════════════════════════════
+   ABOUT.CSS
+═══════════════════════════════════════════ */
+
+.about {
+  background: linear-gradient(180deg, var(--clr-bg) 0%, var(--clr-bg2) 100%);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-intro {
+  font-size: 1.15rem;
+  color: var(--clr-text);
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.about-text p {
+  color: var(--clr-text-muted);
+  margin-bottom: 16px;
+}
+
+.currently-title {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--clr-text-muted);
+  margin-top: 28px;
+  margin-bottom: 4px;
+}
+
+/* Terminal Window */
+.terminal-window {
+  background: rgba(0,0,0,0.6);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+  animation: float 6s ease-in-out infinite;
+}
+
+.terminal-header {
+  background: rgba(255,255,255,0.05);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.terminal-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+}
+.dot-red    { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green  { background: #27c93f; }
+
+.terminal-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--clr-text-muted);
+  margin-left: 8px;
+}
+
+.terminal-body {
+  padding: 20px 24px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 2;
+}
+
+.terminal-line, .terminal-output {
+  display: block;
+}
+
+.t-prompt { color: var(--clr-green); }
+.t-sep    { color: var(--clr-text-muted); }
+.t-path   { color: var(--clr-cyan); }
+.t-dollar { color: var(--clr-text-muted); }
+.t-cmd    { color: var(--clr-text); }
+.t-key    { color: var(--clr-purple); }
+.t-green  { color: var(--clr-green); }
+.t-cyan   { color: var(--clr-cyan); }
+.t-output { color: var(--clr-text-muted); padding-left: 16px; }
+.t-cursor { color: var(--clr-green); animation: blink 1s step-end infinite; }
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .terminal-window { animation: none; }
+}

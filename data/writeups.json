@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Getting Started — My First CTF Writeup",
+    "slug": "first-ctf",
+    "category": "CTF",
+    "difficulty": "Easy",
+    "date": "2026-03-10",
+    "excerpt": "My first ever CTF challenge. A beginner-friendly web challenge involving simple XSS and basic recon. Here's how I solved it step by step.",
+    "tags": ["XSS", "Recon", "Web", "Beginner"],
+    "link": "writeups/first-ctf.html",
+    "coming_soon": true
+  },
+  {
+    "id": 2,
+    "title": "SQL Injection — From Basics to Bypass",
+    "slug": "sqli-basics",
+    "category": "Web",
+    "difficulty": "Medium",
+    "date": "2026-03-10",
+    "excerpt": "A deep dive into SQL injection — UNION attacks, blind SQLi, and WAF bypass techniques. Documented for the community.",
+    "tags": ["SQLi", "Web", "OWASP", "Bypass"],
+    "link": "writeups/sqli-basics.html",
+    "coming_soon": true
+  }
+]

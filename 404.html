@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — ACCESS DENIED | Aaron</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <style>
+    body { min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:24px; }
+    .err-code { font-family:var(--font-mono); font-size:clamp(6rem,20vw,14rem); font-weight:700; color:var(--clr-pink); line-height:1; animation:glitch-skew 2s infinite; position:relative; }
+    .err-code::before,.err-code::after { content:'404'; position:absolute; top:0;left:0;width:100%; }
+    .err-code::before { color:var(--clr-cyan); animation:glitch-1 2s infinite; }
+    .err-code::after  { color:var(--clr-purple); animation:glitch-2 1.5s infinite; }
+    .err-title { font-family:var(--font-mono); font-size:1.4rem; color:var(--clr-pink); margin:12px 0; letter-spacing:0.15em; }
+    .err-msg   { color:var(--clr-text-muted); margin-bottom:40px; }
+    .terminal-block { background:rgba(0,0,0,0.5); border:1px solid rgba(255,45,120,0.3); border-radius:10px; padding:24px; display:inline-block; margin-bottom:40px; font-family:var(--font-mono); font-size:0.85rem; text-align:left; }
+    .terminal-block .t-red  { color:var(--clr-pink); }
+    .terminal-block .t-muted{ color:var(--clr-text-dim); }
+  </style>
+</head>
+<body>
+  <div class="scanline-overlay"></div>
+  <div>
+    <div class="err-code">404</div>
+    <div class="err-title">⚠ ACCESS DENIED ⚠</div>
+    <p class="err-msg">The page you're looking for doesn't exist or was moved.</p>
+    <div class="terminal-block">
+      <div><span class="t-red">ERROR</span><span class="t-muted"> : path not found in filesystem</span></div>
+      <div><span class="t-red">STATUS</span><span class="t-muted">: 404 — Unauthorized Access Attempt Logged</span></div>
+      <div><span class="t-red">TRACE </span><span class="t-muted">: returning to safe zone...</span></div>
+    </div>
+    <br/>
+    <a href="index.html" class="btn btn-primary" style="display:inline-flex;">
+      ← Return to Base
+    </a>
+  </div>
+</body>
+</html>

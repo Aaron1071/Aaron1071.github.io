@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aaron — Cybersecurity Student at NFSU. CTF Player, Ethical Hacker, Bug Hunter. Writeups, research and more." />
+  <meta property="og:title" content="Aaron | Cybersecurity Portfolio" />
+  <meta property="og:description" content="1st Year M.Sc. Cybersecurity @ NFSU. CTF writeups, hacking research, and more." />
+  <meta property="og:type" content="website" />
+  <title>Aaron | Cybersecurity Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
+  <!-- CSS Modules -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/nav.css" />
+  <link rel="stylesheet" href="assets/css/hero.css" />
+  <link rel="stylesheet" href="assets/css/about.css" />
+  <link rel="stylesheet" href="assets/css/skills.css" />
+  <link rel="stylesheet" href="assets/css/writeups.css" />
+  <link rel="stylesheet" href="assets/css/timeline.css" />
+  <link rel="stylesheet" href="assets/css/contact.css" />
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Scanline Overlay -->
+  <div class="scanline-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>aaron<span class="logo-slash">/</span><span class="logo-bracket">&gt;</span>
+        <span class="logo-cursor">_</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#writeups" class="nav-link" data-section="writeups">Writeups</a></li>
+        <li><a href="#timeline" class="nav-link" data-section="timeline">Journey</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <ul class="mobile-nav-links">
+      <li><a href="#home" class="mobile-link">Home</a></li>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#writeups" class="mobile-link">Writeups</a></li>
+      <li><a href="#timeline" class="mobile-link">Journey</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero-content">
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        ONLINE &nbsp;|&nbsp; Hunting Bugs...
+      </div>
+      <h1 class="hero-name glitch" data-text="Aaron">Aaron</h1>
+      <div class="hero-subtitle">
+        <span class="typewriter-prefix">&gt;&nbsp;</span>
+        <span class="typewriter" id="typewriter"></span>
+        <span class="typewriter-cursor">█</span>
+      </div>
+      <p class="hero-desc">
+        Cybersecurity student breaking things, learning everything.<br />
+        Documenting the journey one writeup at a time.
+      </p>
+      <div class="hero-cta">
+        <a href="#writeups" class="btn btn-primary">
+          <i class="fas fa-file-code"></i> View Writeups
+        </a>
+        <a href="#about" class="btn btn-secondary">
+          <i class="fas fa-terminal"></i> About Me
+        </a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+      <span></span><span></span><span></span>
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ABOUT SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">
+          <span class="title-accent">//</span> About Me
+        </h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal reveal-left">
+          <p class="about-intro">
+            Hey, I'm <span class="highlight">Aaron</span> — a first-year M.Sc. Cybersecurity student at 
+            <span class="highlight">NFSU</span> (National Forensic Sciences University). 
+            Previously completed my <span class="highlight">BCA from St. Xavier's College, Ahmedabad</span>.
+          </p>
+          <p>
+            I live in the terminal. My passion lies in breaking systems, understanding how attacks work, 
+            and documenting everything so others can learn too.
+          </p>
+          <div class="currently-section">
+            <h3 class="currently-title"><span class="accent-text">Currently&nbsp;→</span></h3>
+            <div class="tags-container">
+              <span class="tag">🏴 CTF Competitions</span>
+              <span class="tag">🌐 Web Exploitation</span>
+              <span class="tag">🔬 Malware Analysis</span>
+              <span class="tag">🔒 Network Security</span>
+              <span class="tag">📱 Mobile Security</span>
+              <span class="tag">🐞 Bug Hunting</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-terminal reveal reveal-right">
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-dot dot-red"></div>
+              <div class="terminal-dot dot-yellow"></div>
+              <div class="terminal-dot dot-green"></div>
+              <span class="terminal-title">aaron@nfsu:~$</span>
+            </div>
+            <div class="terminal-body">
+              <div class="terminal-line">
+                <span class="t-prompt">aaron@nfsu</span><span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span>
+                <span class="t-cmd"> cat whoami.txt</span>
+              </div>
+              <div class="terminal-output t-line-1">
+                <span class="t-key">name</span>: Aaron
+              </div>
+              <div class="terminal-output t-line-2">
+                <span class="t-key">university</span>: NFSU, Gandhinagar
+              </div>
+              <div class="terminal-output t-line-3">
+                <span class="t-key">degree</span>: M.Sc. Cybersecurity (Year 1)
+              </div>
+              <div class="terminal-output t-line-4">
+                <span class="t-key">previous</span>: BCA @ St. Xavier's, Ahmedabad
+              </div>
+              <div class="terminal-output t-line-5">
+                <span class="t-key">interests</span>: [CTF, RedTeam, WebHacking]
+              </div>
+              <div class="terminal-output t-line-6">
+                <span class="t-key">status</span>: <span class="t-green">LEARNING | HACKING | GRINDING</span>
+              </div>
+              <div class="terminal-output t-line-7">
+                <span class="t-key">access</span>: <span class="t-cyan">GRANTED ✓</span>
+              </div>
+              <div class="terminal-line t-line-8">
+                <span class="t-prompt">aaron@nfsu</span><span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span>
+                <span class="t-cursor">█</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SKILLS SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">
+          <span class="title-accent">//</span> Arsenal
+        </h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+        <!-- Offensive Security -->
+        <div class="skill-card reveal">
+          <div class="skill-card-header">
+            <i class="fas fa-skull-crossbones skill-icon"></i>
+            <h3>Offensive Security</h3>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-label"><span>Web App Hacking</span><span>75%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-label"><span>Network Exploitation</span><span>60%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-label"><span>Privilege Escalation</span><span>65%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
+            </div>
+          </div>
+        </div>
+        <!-- Tools -->
+        <div class="skill-card reveal">
+          <div class="skill-card-header">
+            <i class="fas fa-tools skill-icon"></i>
+            <h3>Tools & Frameworks</h3>
+          </div>
+          <div class="tool-badges">
+            <span class="tool-badge">Burp Suite</span>
+            <span class="tool-badge">Nmap</span>
+            <span class="tool-badge">Metasploit</span>
+            <span class="tool-badge">Wireshark</span>
+            <span class="tool-badge">Gobuster</span>
+            <span class="tool-badge">SQLMap</span>
+            <span class="tool-badge">Hydra</span>
+            <span class="tool-badge">John the Ripper</span>
+            <span class="tool-badge">Ghidra</span>
+            <span class="tool-badge">GDB</span>
+          </div>
+        </div>
+        <!-- Programming -->
+        <div class="skill-card reveal">
+          <div class="skill-card-header">
+            <i class="fas fa-code skill-icon"></i>
+            <h3>Programming</h3>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-label"><span>Python</span><span>80%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-label"><span>Bash/Shell</span><span>70%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-label"><span>JavaScript</span><span>55%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="55"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-label"><span>C / C++</span><span>50%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="50"></div></div>
+            </div>
+          </div>
+        </div>
+        <!-- OS & Platforms -->
+        <div class="skill-card reveal">
+          <div class="skill-card-header">
+            <i class="fas fa-server skill-icon"></i>
+            <h3>Platforms & OS</h3>
+          </div>
+          <div class="tool-badges">
+            <span class="tool-badge">Kali Linux</span>
+            <span class="tool-badge">Parrot OS</span>
+            <span class="tool-badge">Ubuntu</span>
+            <span class="tool-badge">TryHackMe</span>
+            <span class="tool-badge">HackTheBox</span>
+            <span class="tool-badge">CTFd</span>
+            <span class="tool-badge">VirtualBox</span>
+            <span class="tool-badge">Docker</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       WRITEUPS SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="writeups-section section" id="writeups">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">
+          <span class="title-accent">//</span> Writeups
+        </h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">CTFs, vulnerabilities, and research — documented.</p>
+      </div>
+      <!-- Filter Bar -->
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="CTF">CTF</button>
+        <button class="filter-btn" data-filter="Web">Web</button>
+        <button class="filter-btn" data-filter="Pwn">Pwn</button>
+        <button class="filter-btn" data-filter="Forensics">Forensics</button>
+        <button class="filter-btn" data-filter="Misc">Misc</button>
+      </div>
+      <!-- Writeups Grid (populated by JS) -->
+      <div class="writeups-grid" id="writeupsGrid">
+        <!-- Dynamically loaded from data/writeups.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       TIMELINE SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="timeline-section section" id="timeline">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">
+          <span class="title-accent">//</span> My Journey
+        </h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal" data-side="right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">2025 — Present</div>
+            <h3 class="timeline-title">M.Sc. Cybersecurity</h3>
+            <h4 class="timeline-org">National Forensic Sciences University (NFSU)</h4>
+            <p>Currently in 1st year. Deep diving into network security, digital forensics, ethical hacking, and malware analysis.</p>
+            <div class="timeline-tags">
+              <span class="tag small">Cybersecurity</span>
+              <span class="tag small">Digital Forensics</span>
+              <span class="tag small">Ethical Hacking</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal" data-side="left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">2022 — 2025</div>
+            <h3 class="timeline-title">Bachelor of Computer Applications (BCA)</h3>
+            <h4 class="timeline-org">St. Xavier's College, Ahmedabad</h4>
+            <p>Built the foundation in computer science, programming, and networking. Discovered the passion for cybersecurity during final year.</p>
+            <div class="timeline-tags">
+              <span class="tag small">BCA</span>
+              <span class="tag small">Programming</span>
+              <span class="tag small">Networking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CONTACT SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="contact-section section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">
+          <span class="title-accent">//</span> Get In Touch
+        </h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">Have a challenge? A collab? Or just want to talk hacking?</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-form-wrap reveal reveal-left">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="your_name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Hey Aaron, let's talk about..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary full-width">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+        <div class="contact-info reveal reveal-right">
+          <div class="contact-info-block">
+            <h3 class="info-title">Find me online</h3>
+            <div class="social-links">
+              <a href="https://github.com/Aaron1071" target="_blank" class="social-link" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+                <span class="social-arrow">→</span>
+              </a>
+              <a href="#" class="social-link" aria-label="Twitter/X">
+                <i class="fab fa-x-twitter"></i>
+                <span>Twitter / X</span>
+                <span class="social-arrow">→</span>
+              </a>
+              <a href="#" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+                <span class="social-arrow">→</span>
+              </a>
+              <a href="https://tryhackme.com" target="_blank" class="social-link thm" aria-label="TryHackMe">
+                <i class="fas fa-flag"></i>
+                <span>TryHackMe</span>
+                <span class="social-arrow">→</span>
+              </a>
+              <a href="https://hackthebox.com" target="_blank" class="social-link htb" aria-label="HackTheBox">
+                <i class="fas fa-box"></i>
+                <span>HackTheBox</span>
+                <span class="social-arrow">→</span>
+              </a>
+            </div>
+          </div>
+          <div class="terminal-quote">
+            <span class="t-prompt">aaron@nfsu:~$</span><br />
+            <span class="t-cmd">echo "Always learning, always hacking."</span><br />
+            <span class="t-output">Always learning, always hacking.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <span class="footer-logo">&lt;aaron/&gt;</span>
+      <span class="footer-copy">© 2026 — Built in the terminal</span>
+      <span class="footer-status"><span class="status-dot small"></span> All systems operational</span>
+    </div>
+  </footer>
+
+  <!-- JS Modules -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+/* ═══════════════════════════════════════════
+   WRITEUPS.CSS
+═══════════════════════════════════════════ */
+
+.writeups-section {
+  background: linear-gradient(180deg, var(--clr-bg2) 0%, var(--clr-bg) 100%);
+}
+
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+.filter-btn {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1px solid var(--clr-border);
+  background: var(--clr-surface);
+  color: var(--clr-text-muted);
+  transition: var(--transition);
+  letter-spacing: 0.05em;
+}
+.filter-btn:hover,
+.filter-btn.active {
+  background: rgba(0,245,255,0.1);
+  border-color: var(--clr-cyan);
+  color: var(--clr-cyan);
+  box-shadow: 0 0 15px rgba(0,245,255,0.2);
+}
+
+/* Writeups grid */
+.writeups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+/* Writeup card */
+.writeup-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.writeup-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-md);
+  padding: 1px;
+  background: linear-gradient(135deg, var(--clr-cyan), var(--clr-purple), transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.writeup-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 30px rgba(0,245,255,0.15);
+  border-color: rgba(0,245,255,0.3);
+}
+.writeup-card:hover::after { opacity: 1; }
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.card-category {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: rgba(0,245,255,0.1);
+  border: 1px solid rgba(0,245,255,0.2);
+  color: var(--clr-cyan);
+  letter-spacing: 0.1em;
+}
+
+.diff-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.diff-easy   { background: rgba(0,255,136,0.12); color: var(--clr-green);  border: 1px solid rgba(0,255,136,0.25); }
+.diff-medium { background: rgba(255,230,0,0.12);  color: var(--clr-yellow); border: 1px solid rgba(255,230,0,0.25); }
+.diff-hard   { background: rgba(255,45,120,0.12); color: var(--clr-pink);  border: 1px solid rgba(255,45,120,0.25); }
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--clr-text);
+  line-height: 1.4;
+}
+
+.card-excerpt {
+  font-size: 0.88rem;
+  color: var(--clr-text-muted);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.card-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  background: rgba(123,47,255,0.1);
+  border: 1px solid rgba(123,47,255,0.2);
+  color: var(--clr-purple-dim);
+  border-radius: 4px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.card-date {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--clr-text-dim);
+}
+.card-read-more {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--clr-cyan);
+  transition: var(--transition);
+}
+.writeup-card:hover .card-read-more {
+  color: #fff;
+  text-shadow: var(--glow-cyan);
+  letter-spacing: 0.05em;
+}
+
+/* Coming soon placeholder */
+.coming-soon-card {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 40px;
+  border: 2px dashed var(--clr-border);
+  border-radius: var(--radius-lg);
+  background: var(--clr-surface);
+}
+.coming-soon-card .cs-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  color: var(--clr-purple);
+  animation: pulse-neon 2.5s infinite;
+}
+.coming-soon-card h3 {
+  font-family: var(--font-mono);
+  color: var(--clr-cyan);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+.coming-soon-card p { color: var(--clr-text-muted); }
+
+@media (max-width: 600px) {
+  .writeups-grid { grid-template-columns: 1fr; }
+}
