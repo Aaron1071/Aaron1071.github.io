@@ -3,21 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Aaron — Cybersecurity Student at NFSU. CTF Player, Ethical Hacker, Bug Hunter. Writeups, research and more." />
-  <meta property="og:title" content="Aaron | Cybersecurity Portfolio" />
-  <meta property="og:description" content="1st Year M.Sc. Cybersecurity @ NFSU. CTF writeups, hacking research, and more." />
-  <meta property="og:type" content="website" />
-  <title>Aaron | Cybersecurity Portfolio</title>
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <title>AARON — Cybersecurity Operator</title>
+  <meta name="description" content="Aaron — First-year MSc Cybersecurity at NFSU. CTF player, malware analyst, web exploit researcher." />
+
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  <!-- Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne+Mono&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <!-- Highlight.js -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
-  <!-- CSS Modules -->
+
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/animations.css" />
   <link rel="stylesheet" href="assets/css/nav.css" />
@@ -30,412 +26,484 @@
 </head>
 <body>
 
-  <!-- Scroll Progress Bar -->
-  <div class="scroll-progress" id="scrollProgress"></div>
+  <!-- ─── BOOT SCREEN ─────────────────────── -->
+  <div id="boot">
+    <div class="boot-logo">AARON</div>
+    <div class="boot-log" id="boot-log"></div>
+    <div class="boot-bar-wrap">
+      <div class="boot-bar-fill" id="boot-bar"></div>
+    </div>
+  </div>
 
-  <!-- Scanline Overlay -->
-  <div class="scanline-overlay"></div>
+  <!-- ─── READING PROGRESS ────────────────── -->
+  <div id="read-bar"></div>
 
-  <!-- Navigation -->
+  <!-- ─── CUSTOM CURSOR ───────────────────── -->
+  <div id="c-dot"></div>
+  <div id="c-ring"></div>
+  <div id="c-cross-h"></div>
+  <div id="c-cross-v"></div>
+
+  <!-- ─── NAVIGATION ──────────────────────── -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#home" class="nav-logo">
-        <span class="logo-bracket">&lt;</span>aaron<span class="logo-slash">/</span><span class="logo-bracket">&gt;</span>
-        <span class="logo-cursor">_</span>
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">[</span><span class="nav-id">AARON</span><span class="logo-slash">/</span><span class="logo-bracket">]</span>
       </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
-        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
-        <li><a href="#writeups" class="nav-link" data-section="writeups">Writeups</a></li>
-        <li><a href="#timeline" class="nav-link" data-section="timeline">Journey</a></li>
-        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+      <div class="nav-links">
+        <a href="#about"    class="nav-link" data-section="about">ABOUT</a>
+        <a href="#skills"   class="nav-link" data-section="skills">SKILLS</a>
+        <a href="#timeline" class="nav-link" data-section="timeline">TIMELINE</a>
+        <a href="#writeups" class="nav-link" data-section="writeups">WRITEUPS</a>
+        <a href="#contact"  class="nav-link" data-section="contact">CONTACT</a>
+        <span class="signal-pulse"></span>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- Mobile Menu Overlay -->
+  <!-- Mobile overlay -->
   <div class="mobile-overlay" id="mobileOverlay">
-    <ul class="mobile-nav-links">
-      <li><a href="#home" class="mobile-link">Home</a></li>
-      <li><a href="#about" class="mobile-link">About</a></li>
-      <li><a href="#skills" class="mobile-link">Skills</a></li>
-      <li><a href="#writeups" class="mobile-link">Writeups</a></li>
-      <li><a href="#timeline" class="mobile-link">Journey</a></li>
-      <li><a href="#contact" class="mobile-link">Contact</a></li>
-    </ul>
+    <div class="mobile-nav-links">
+      <a href="#about"    class="mobile-link">ABOUT</a>
+      <a href="#skills"   class="mobile-link">SKILLS</a>
+      <a href="#timeline" class="mobile-link">TIMELINE</a>
+      <a href="#writeups" class="mobile-link">WRITEUPS</a>
+      <a href="#contact"  class="mobile-link">CONTACT</a>
+    </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════
-       HERO SECTION
-  ═══════════════════════════════════════════ -->
-  <section class="hero" id="home">
+  <!-- ─── TICKER ──────────────────────────── -->
+  <div id="ticker-wrap">
+    <div class="ticker-track" id="ticker"></div>
+  </div>
+
+  <!-- ─── HERO ────────────────────────────── -->
+  <section id="hero" class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-slash"></div>
+    <canvas id="radar-canvas"></canvas>
     <canvas id="particleCanvas"></canvas>
+
+    <div class="hero-status">
+      <div class="hs-line"><span>CLEARANCE</span><span class="hs-lime">OPERATOR</span></div>
+      <div class="hs-line"><span>BASE</span><span class="hs-val">GANDHINAGAR, IN</span></div>
+      <div class="hs-line"><span>INSTITUTION</span><span class="hs-val">NFSU</span></div>
+      <div class="hs-line"><span>YEAR</span><span class="hs-val">01 / MSC CYBERSEC</span></div>
+      <div class="hs-line"><span>STATUS</span><span class="hs-lime">ACTIVE</span></div>
+    </div>
+
     <div class="hero-content">
-      <div class="status-badge">
-        <span class="status-dot"></span>
-        ONLINE &nbsp;|&nbsp; Hunting Bugs...
+      <div class="hero-label">Cybersecurity Operator</div>
+      <div class="hero-name-wrap">
+        <div class="hero-name glitch" data-text="AARON">
+          <span class="n-lime">A</span>ARON<br>
+          <span class="n-outline">TYLER</span>
+        </div>
       </div>
-      <h1 class="hero-name glitch" data-text="Aaron">Aaron</h1>
-      <div class="hero-subtitle">
-        <span class="typewriter-prefix">&gt;&nbsp;</span>
-        <span class="typewriter" id="typewriter"></span>
-        <span class="typewriter-cursor">█</span>
+      <div class="hero-role-bar">
+        <span class="hero-role-text">&gt;&nbsp;<span id="typewriter"></span><span class="hero-caret"></span></span>
       </div>
       <p class="hero-desc">
-        Cybersecurity student breaking things, learning everything.<br />
-        Documenting the journey one writeup at a time.
+        First-year graduate at <strong>NFSU</strong>. I reverse-engineer threats, break web apps,
+        and document every exploit in painful detail. Known to teammates as <strong>Tyler</strong>.
       </p>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-val" id="c-writeups">0</span>
+          <span class="meta-lbl">Writeups</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-val" id="c-ctf">0</span>
+          <span class="meta-lbl">CTFs</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-val" id="c-cve">0</span>
+          <span class="meta-lbl">CVEs</span>
+        </div>
+      </div>
       <div class="hero-cta">
-        <a href="#writeups" class="btn btn-primary">
-          <i class="fas fa-file-code"></i> View Writeups
-        </a>
-        <a href="#about" class="btn btn-secondary">
-          <i class="fas fa-terminal"></i> About Me
-        </a>
+        <a href="#writeups" class="btn btn-primary">VIEW OPS LOG</a>
+        <a href="#contact"  class="btn btn-outline">CONTACT</a>
       </div>
     </div>
-    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
-      <span></span><span></span><span></span>
-    </a>
+
+    <div class="scroll-cue">
+      <span>SCROLL</span>
+      <div class="scroll-track"><div class="scroll-thumb"></div></div>
+    </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       ABOUT SECTION
-  ═══════════════════════════════════════════ -->
-  <section class="about section" id="about">
+  <!-- ─── ABOUT ───────────────────────────── -->
+  <section id="about" class="about section">
     <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">
-          <span class="title-accent">//</span> About Me
-        </h2>
-        <div class="section-line"></div>
+
+      <div class="sec-header reveal">
+        <div class="sec-num">01</div>
+        <div class="sec-title-wrap">
+          <div class="sec-sup">// INTELLIGENCE FILE</div>
+          <div class="sec-title">ABOUT <span>ME</span></div>
+        </div>
+        <div class="sec-rule"></div>
       </div>
+
       <div class="about-grid">
         <div class="about-text reveal reveal-left">
           <p class="about-intro">
-            Hey, I'm <span class="highlight">Aaron</span> — a first-year M.Sc. Cybersecurity student at 
-            <span class="highlight">NFSU</span> (National Forensic Sciences University). 
-            Previously completed my <span class="highlight">BCA from St. Xavier's College, Ahmedabad</span>.
+            I'm <strong>Aaron</strong>, a first-year MSc Cybersecurity student at the
+            National Forensic Sciences University (NFSU), Gandhinagar. My teammates
+            call me <strong>Tyler</strong>.
           </p>
           <p>
-            I live in the terminal. My passion lies in breaking systems, understanding how attacks work, 
-            and documenting everything so others can learn too.
+            I specialise in offensive security — web application exploitation, binary
+            reverse engineering, and malware analysis. I document every technique I
+            learn as a writeup so others can follow the same path.
           </p>
-          <div class="currently-section">
-            <h3 class="currently-title"><span class="accent-text">Currently&nbsp;→</span></h3>
-            <div class="tags-container">
-              <span class="tag">🏴 CTF Competitions</span>
-              <span class="tag">🌐 Web Exploitation</span>
-              <span class="tag">🔬 Malware Analysis</span>
-              <span class="tag">🔒 Network Security</span>
-              <span class="tag">📱 Mobile Security</span>
-              <span class="tag">🐞 Bug Hunting</span>
+          <p>
+            When I'm not grinding CTFs or tearing apart PE files in Ghidra, I'm
+            reading CVE advisories and building custom lab environments to reproduce
+            real-world vulnerabilities.
+          </p>
+          <p class="currently-title">// Currently</p>
+          <p>Studying at NFSU · Competing in CTFs · Building this ops log.</p>
+
+          <div style="margin-top:2rem;">
+            <div class="edu-card">
+              <div class="edu-date">2025 – PRESENT</div>
+              <div class="edu-title">MSc Cybersecurity</div>
+              <div class="edu-org">National Forensic Sciences University, Gandhinagar</div>
+            </div>
+            <div class="edu-card">
+              <div class="edu-date">2022 – 2025</div>
+              <div class="edu-title">BSc Computer Science</div>
+              <div class="edu-org">Gujarat University</div>
             </div>
           </div>
         </div>
-        <div class="about-terminal reveal reveal-right">
+
+        <div class="reveal reveal-right">
           <div class="terminal-window">
             <div class="terminal-header">
-              <div class="terminal-dot dot-red"></div>
-              <div class="terminal-dot dot-yellow"></div>
-              <div class="terminal-dot dot-green"></div>
-              <span class="terminal-title">aaron@nfsu:~$</span>
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+              <span class="terminal-title">aaron@nfsu ~ zsh</span>
             </div>
             <div class="terminal-body">
-              <div class="terminal-line">
-                <span class="t-prompt">aaron@nfsu</span><span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span>
-                <span class="t-cmd"> cat whoami.txt</span>
-              </div>
-              <div class="terminal-output t-line-1">
-                <span class="t-key">name</span>: Aaron
-              </div>
-              <div class="terminal-output t-line-2">
-                <span class="t-key">university</span>: NFSU, Gandhinagar
-              </div>
-              <div class="terminal-output t-line-3">
-                <span class="t-key">degree</span>: M.Sc. Cybersecurity (Year 1)
-              </div>
-              <div class="terminal-output t-line-4">
-                <span class="t-key">previous</span>: BCA @ St. Xavier's, Ahmedabad
-              </div>
-              <div class="terminal-output t-line-5">
-                <span class="t-key">interests</span>: [CTF, RedTeam, WebHacking]
-              </div>
-              <div class="terminal-output t-line-6">
-                <span class="t-key">status</span>: <span class="t-green">LEARNING | HACKING | GRINDING</span>
-              </div>
-              <div class="terminal-output t-line-7">
-                <span class="t-key">access</span>: <span class="t-cyan">GRANTED ✓</span>
-              </div>
-              <div class="terminal-line t-line-8">
-                <span class="t-prompt">aaron@nfsu</span><span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span>
-                <span class="t-cursor">█</span>
-              </div>
+              <span class="terminal-line t-line-1">
+                <span class="t-prompt">aaron</span><span class="t-sep">@</span><span class="t-path">nfsu</span><span class="t-sep"> % </span><span class="t-cmd">whoami --verbose</span>
+              </span>
+              <span class="terminal-output t-line-2 t-output">Name    : Aaron (Tyler)</span>
+              <span class="terminal-output t-line-3 t-output">Role    : Cybersecurity Operator</span>
+              <span class="terminal-output t-line-4 t-output">Base    : NFSU, Gandhinagar</span>
+              <span class="terminal-output t-line-5 t-output">Focus   : Web, Rev, Pwn, Forensics</span>
+              <span class="terminal-line t-line-6">
+                <span class="t-prompt">aaron</span><span class="t-sep">@</span><span class="t-path">nfsu</span><span class="t-sep"> % </span><span class="t-cmd">cat clearance.txt</span>
+              </span>
+              <span class="terminal-output t-line-7 t-green">CLEARANCE: OPERATOR LEVEL — GRANTED</span>
+              <span class="terminal-line t-line-8">
+                <span class="t-prompt">aaron</span><span class="t-sep">@</span><span class="t-path">nfsu</span><span class="t-sep"> % </span><span class="t-cursor">▌</span>
+              </span>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       SKILLS SECTION
-  ═══════════════════════════════════════════ -->
-  <section class="skills section" id="skills">
+  <!-- ─── SKILLS ──────────────────────────── -->
+  <section id="skills" class="skills section">
     <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">
-          <span class="title-accent">//</span> Arsenal
-        </h2>
-        <div class="section-line"></div>
+
+      <div class="sec-header reveal">
+        <div class="sec-num">02</div>
+        <div class="sec-title-wrap">
+          <div class="sec-sup">// CAPABILITY MATRIX</div>
+          <div class="sec-title">SKILLS &amp; <span>TOOLS</span></div>
+        </div>
+        <div class="sec-rule"></div>
       </div>
+
       <div class="skills-grid">
-        <!-- Offensive Security -->
+
+        <!-- Web Security -->
         <div class="skill-card reveal">
           <div class="skill-card-header">
-            <i class="fas fa-skull-crossbones skill-icon"></i>
-            <h3>Offensive Security</h3>
+            <div class="skill-icon"><i class="fas fa-globe"></i></div>
+            <h3>Web Security</h3>
           </div>
           <div class="skill-bars">
             <div class="skill-bar-item">
-              <div class="skill-label"><span>Web App Hacking</span><span>75%</span></div>
+              <div class="skill-label"><span>SQL Injection</span><span>90%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-label"><span>XSS / CSRF</span><span>85%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-label"><span>SSRF / RCE</span><span>78%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reverse Engineering -->
+        <div class="skill-card reveal">
+          <div class="skill-card-header">
+            <div class="skill-icon"><i class="fas fa-microchip"></i></div>
+            <h3>Reverse Engineering</h3>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-label"><span>Ghidra / IDA</span><span>82%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-label"><span>x64dbg</span><span>75%</span></div>
               <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
             </div>
             <div class="skill-bar-item">
-              <div class="skill-label"><span>Network Exploitation</span><span>60%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-label"><span>Privilege Escalation</span><span>65%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
+              <div class="skill-label"><span>Malware Analysis</span><span>70%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
             </div>
           </div>
         </div>
-        <!-- Tools -->
+
+        <!-- Binary Exploitation -->
         <div class="skill-card reveal">
           <div class="skill-card-header">
-            <i class="fas fa-tools skill-icon"></i>
-            <h3>Tools & Frameworks</h3>
-          </div>
-          <div class="tool-badges">
-            <span class="tool-badge">Burp Suite</span>
-            <span class="tool-badge">Nmap</span>
-            <span class="tool-badge">Metasploit</span>
-            <span class="tool-badge">Wireshark</span>
-            <span class="tool-badge">Gobuster</span>
-            <span class="tool-badge">SQLMap</span>
-            <span class="tool-badge">Hydra</span>
-            <span class="tool-badge">John the Ripper</span>
-            <span class="tool-badge">Ghidra</span>
-            <span class="tool-badge">GDB</span>
-          </div>
-        </div>
-        <!-- Programming -->
-        <div class="skill-card reveal">
-          <div class="skill-card-header">
-            <i class="fas fa-code skill-icon"></i>
-            <h3>Programming</h3>
+            <div class="skill-icon"><i class="fas fa-terminal"></i></div>
+            <h3>Binary Exploitation</h3>
           </div>
           <div class="skill-bars">
             <div class="skill-bar-item">
-              <div class="skill-label"><span>Python</span><span>80%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+              <div class="skill-label"><span>pwntools / ROP</span><span>72%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="72"></div></div>
             </div>
             <div class="skill-bar-item">
-              <div class="skill-label"><span>Bash/Shell</span><span>70%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+              <div class="skill-label"><span>Heap Exploitation</span><span>60%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div>
             </div>
             <div class="skill-bar-item">
-              <div class="skill-label"><span>JavaScript</span><span>55%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="55"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-label"><span>C / C++</span><span>50%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="50"></div></div>
+              <div class="skill-label"><span>Format Strings</span><span>75%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
             </div>
           </div>
         </div>
-        <!-- OS & Platforms -->
+
+        <!-- Tools -->
         <div class="skill-card reveal">
           <div class="skill-card-header">
-            <i class="fas fa-server skill-icon"></i>
-            <h3>Platforms & OS</h3>
+            <div class="skill-icon"><i class="fas fa-toolbox"></i></div>
+            <h3>Toolkit</h3>
           </div>
           <div class="tool-badges">
-            <span class="tool-badge">Kali Linux</span>
-            <span class="tool-badge">Parrot OS</span>
-            <span class="tool-badge">Ubuntu</span>
-            <span class="tool-badge">TryHackMe</span>
-            <span class="tool-badge">HackTheBox</span>
-            <span class="tool-badge">CTFd</span>
-            <span class="tool-badge">VirtualBox</span>
-            <span class="tool-badge">Docker</span>
+            <span class="tool-badge">Burp Suite</span>
+            <span class="tool-badge">Wireshark</span>
+            <span class="tool-badge">Nmap</span>
+            <span class="tool-badge">Metasploit</span>
+            <span class="tool-badge">Gobuster</span>
+            <span class="tool-badge">pwntools</span>
+            <span class="tool-badge">Ghidra</span>
+            <span class="tool-badge">x64dbg</span>
+            <span class="tool-badge">Volatility</span>
+            <span class="tool-badge">sqlmap</span>
+            <span class="tool-badge">ffuf</span>
+            <span class="tool-badge">John / Hashcat</span>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       WRITEUPS SECTION
-  ═══════════════════════════════════════════ -->
-  <section class="writeups-section section" id="writeups">
+  <!-- ─── TIMELINE ─────────────────────────── -->
+  <section id="timeline" class="timeline-section section">
     <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">
-          <span class="title-accent">//</span> Writeups
-        </h2>
-        <div class="section-line"></div>
-        <p class="section-subtitle">CTFs, vulnerabilities, and research — documented.</p>
-      </div>
-      <!-- Filter Bar -->
-      <div class="filter-bar reveal">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="CTF">CTF</button>
-        <button class="filter-btn" data-filter="Web">Web</button>
-        <button class="filter-btn" data-filter="Pwn">Pwn</button>
-        <button class="filter-btn" data-filter="Forensics">Forensics</button>
-        <button class="filter-btn" data-filter="Misc">Misc</button>
-      </div>
-      <!-- Writeups Grid (populated by JS) -->
-      <div class="writeups-grid" id="writeupsGrid">
-        <!-- Dynamically loaded from data/writeups.json -->
-      </div>
-    </div>
-  </section>
 
-  <!-- ═══════════════════════════════════════════
-       TIMELINE SECTION
-  ═══════════════════════════════════════════ -->
-  <section class="timeline-section section" id="timeline">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">
-          <span class="title-accent">//</span> My Journey
-        </h2>
-        <div class="section-line"></div>
+      <div class="sec-header reveal">
+        <div class="sec-num">03</div>
+        <div class="sec-title-wrap">
+          <div class="sec-sup">// MISSION HISTORY</div>
+          <div class="sec-title">TIMELINE</div>
+        </div>
+        <div class="sec-rule"></div>
       </div>
+
       <div class="timeline">
-        <div class="timeline-item reveal" data-side="right">
+        <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
-            <div class="timeline-date">2025 — Present</div>
-            <h3 class="timeline-title">M.Sc. Cybersecurity</h3>
-            <h4 class="timeline-org">National Forensic Sciences University (NFSU)</h4>
-            <p>Currently in 1st year. Deep diving into network security, digital forensics, ethical hacking, and malware analysis.</p>
-            <div class="timeline-tags">
-              <span class="tag small">Cybersecurity</span>
-              <span class="tag small">Digital Forensics</span>
-              <span class="tag small">Ethical Hacking</span>
+            <div class="timeline-date">2025 — PRESENT</div>
+            <h3 class="timeline-title">MSc Cybersecurity</h3>
+            <div class="timeline-org">NFSU, Gandhinagar</div>
+            <p>Specialising in offensive security, digital forensics, and network intrusion analysis.</p>
+            <div class="tags-container">
+              <span class="tag small">Forensics</span>
+              <span class="tag small">Offensive Sec</span>
             </div>
           </div>
         </div>
+
+        <div class="timeline-item reveal" data-side="left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">2024</div>
+            <h3 class="timeline-title">First CVE Research</h3>
+            <div class="timeline-org">Personal Lab</div>
+            <p>Discovered and documented a logic flaw in an open-source CMS. First independent vulnerability research.</p>
+            <div class="tags-container">
+              <span class="tag small">CVE</span>
+              <span class="tag small">Web</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-date">2023</div>
+            <h3 class="timeline-title">Started CTF Competing</h3>
+            <div class="timeline-org">HackTheBox / picoCTF</div>
+            <p>Began competing in CTFs, focusing on web exploitation and binary challenges.</p>
+            <div class="tags-container">
+              <span class="tag small">CTF</span>
+              <span class="tag small">HackTheBox</span>
+            </div>
+          </div>
+        </div>
+
         <div class="timeline-item reveal" data-side="left">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <div class="timeline-date">2022 — 2025</div>
-            <h3 class="timeline-title">Bachelor of Computer Applications (BCA)</h3>
-            <h4 class="timeline-org">St. Xavier's College, Ahmedabad</h4>
-            <p>Built the foundation in computer science, programming, and networking. Discovered the passion for cybersecurity during final year.</p>
-            <div class="timeline-tags">
-              <span class="tag small">BCA</span>
-              <span class="tag small">Programming</span>
+            <h3 class="timeline-title">BSc Computer Science</h3>
+            <div class="timeline-org">Gujarat University</div>
+            <p>Undergraduate degree with focus on systems programming, networking, and cryptography.</p>
+            <div class="tags-container">
+              <span class="tag small">CS</span>
               <span class="tag small">Networking</span>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       CONTACT SECTION
-  ═══════════════════════════════════════════ -->
-  <section class="contact-section section" id="contact">
+  <!-- ─── WRITEUPS ─────────────────────────── -->
+  <section id="writeups" class="writeups-section section">
     <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">
-          <span class="title-accent">//</span> Get In Touch
-        </h2>
-        <div class="section-line"></div>
-        <p class="section-subtitle">Have a challenge? A collab? Or just want to talk hacking?</p>
+
+      <div class="sec-header reveal">
+        <div class="sec-num">04</div>
+        <div class="sec-title-wrap">
+          <div class="sec-sup">// OPERATIONS LOG</div>
+          <div class="sec-title">SECURITY <span>WRITEUPS</span></div>
+        </div>
+        <div class="sec-rule"></div>
       </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">ALL</button>
+        <button class="filter-btn" data-filter="Web">WEB</button>
+        <button class="filter-btn" data-filter="Pwn">PWN</button>
+        <button class="filter-btn" data-filter="Rev">REV</button>
+        <button class="filter-btn" data-filter="Forensics">FORENSICS</button>
+        <button class="filter-btn" data-filter="CTF">CTF</button>
+      </div>
+
+      <div class="writeups-grid" id="writeupsGrid"></div>
+
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ──────────────────────────── -->
+  <section id="contact" class="contact-section section">
+    <div class="container">
+
+      <div class="sec-header reveal">
+        <div class="sec-num">05</div>
+        <div class="sec-title-wrap">
+          <div class="sec-sup">// OPEN COMMS</div>
+          <div class="sec-title">GET IN <span>TOUCH</span></div>
+        </div>
+        <div class="sec-rule"></div>
+      </div>
+
       <div class="contact-grid">
         <div class="contact-form-wrap reveal reveal-left">
           <form class="contact-form" id="contactForm">
             <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="your_name" required />
+              <label for="name">// NAME</label>
+              <input type="text" id="name" name="name" placeholder="Your callsign" required />
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              <label for="email">// EMAIL</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
             </div>
             <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Hey Aaron, let's talk about..."></textarea>
+              <label for="message">// MESSAGE</label>
+              <textarea id="message" name="message" rows="5" placeholder="Transmit your message..." required></textarea>
             </div>
             <button type="submit" class="btn btn-primary full-width">
               <i class="fas fa-paper-plane"></i> Send Message
             </button>
           </form>
         </div>
+
         <div class="contact-info reveal reveal-right">
-          <div class="contact-info-block">
-            <h3 class="info-title">Find me online</h3>
-            <div class="social-links">
-              <a href="https://github.com/Aaron1071" target="_blank" class="social-link" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
-                <span class="social-arrow">→</span>
-              </a>
-              <a href="#" class="social-link" aria-label="Twitter/X">
-                <i class="fab fa-x-twitter"></i>
-                <span>Twitter / X</span>
-                <span class="social-arrow">→</span>
-              </a>
-              <a href="#" class="social-link" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-                <span>LinkedIn</span>
-                <span class="social-arrow">→</span>
-              </a>
-              <a href="https://tryhackme.com" target="_blank" class="social-link thm" aria-label="TryHackMe">
-                <i class="fas fa-flag"></i>
-                <span>TryHackMe</span>
-                <span class="social-arrow">→</span>
-              </a>
-              <a href="https://hackthebox.com" target="_blank" class="social-link htb" aria-label="HackTheBox">
-                <i class="fas fa-box"></i>
-                <span>HackTheBox</span>
-                <span class="social-arrow">→</span>
-              </a>
-            </div>
+          <p class="info-title">// CONNECT</p>
+          <div class="social-links">
+            <a href="https://github.com/Aaron1071" target="_blank" rel="noopener" class="social-link">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+              <span class="social-arrow">→</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link">
+              <i class="fab fa-linkedin"></i>
+              <span>LinkedIn</span>
+              <span class="social-arrow">→</span>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" class="social-link">
+              <i class="fab fa-x-twitter"></i>
+              <span>Twitter / X</span>
+              <span class="social-arrow">→</span>
+            </a>
+            <a href="https://hackthebox.com" target="_blank" rel="noopener" class="social-link">
+              <i class="fas fa-cube"></i>
+              <span>HackTheBox</span>
+              <span class="social-arrow">→</span>
+            </a>
           </div>
+
           <div class="terminal-quote">
-            <span class="t-prompt">aaron@nfsu:~$</span><br />
-            <span class="t-cmd">echo "Always learning, always hacking."</span><br />
-            <span class="t-output">Always learning, always hacking.</span>
+            <div><span class="t-prompt">// </span><span class="t-output">Available for internships & research collaborations</span></div>
+            <div><span class="t-prompt">// </span><span class="t-output">Response time: &lt; 24h</span></div>
+            <div><span class="t-prompt">// </span><span class="t-output">PGP key available on request</span></div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ─── FOOTER ───────────────────────────── -->
   <footer class="footer">
     <div class="footer-content">
-      <span class="footer-logo">&lt;aaron/&gt;</span>
-      <span class="footer-copy">© 2026 — Built in the terminal</span>
-      <span class="footer-status"><span class="status-dot small"></span> All systems operational</span>
+      <span class="footer-logo">AARON/</span>
+      <span class="footer-copy">© 2025 — Built in the void</span>
+      <span class="footer-status">
+        <span class="status-dot small"></span> SYSTEM ONLINE
+      </span>
     </div>
   </footer>
 
-  <!-- JS Modules -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <!-- JS -->
   <script type="module" src="assets/js/main.js"></script>
 </body>
 </html>

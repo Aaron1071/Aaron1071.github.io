@@ -23,7 +23,18 @@ export async function initWriteups() {
     if (d === 'easy')   return 'diff-easy';
     if (d === 'medium') return 'diff-medium';
     if (d === 'hard')   return 'diff-hard';
+    if (d === 'insane') return 'diff-insane';
     return 'diff-easy';
+  }
+
+  function getCatClass(cat) {
+    const c = cat.toLowerCase();
+    if (c === 'web')      return 'cat-web';
+    if (c === 'pwn')      return 'cat-pwn';
+    if (c === 'rev')      return 'cat-rev';
+    if (c === 'forensics') return 'cat-forensics';
+    if (c === 'ctf')      return 'cat-ctf';
+    return 'cat-misc';
   }
 
   function renderWriteups(list) {
@@ -53,7 +64,7 @@ export async function initWriteups() {
 
       card.innerHTML = `
         <div class="card-top">
-          <span class="card-category">${wu.category}</span>
+          <span class="card-category ${getCatClass(wu.category)}">${wu.category}</span>
           <span class="diff-badge ${getDiffClass(wu.difficulty)}">${wu.difficulty}</span>
         </div>
         <h3 class="card-title">${wu.title}</h3>

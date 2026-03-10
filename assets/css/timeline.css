@@ -3,7 +3,7 @@
 ═══════════════════════════════════════════ */
 
 .timeline-section {
-  background: var(--clr-bg);
+  background: var(--void);
 }
 
 .timeline {
@@ -19,7 +19,7 @@
   transform: translateX(-50%);
   width: 2px;
   height: 0;
-  background: linear-gradient(180deg, var(--clr-cyan), var(--clr-purple));
+  background: linear-gradient(180deg, var(--lime), var(--ice));
   transition: height 1.5s ease;
 }
 .timeline.animated::before { height: 100%; }
@@ -43,54 +43,57 @@
   top: 24px;
   transform: translate(-50%, -50%);
   width: 16px; height: 16px;
-  background: var(--clr-bg);
-  border: 2px solid var(--clr-cyan);
+  background: var(--void);
+  border: 2px solid var(--lime);
   border-radius: 50%;
-  box-shadow: var(--glow-cyan);
+  box-shadow: var(--glow-lime);
   z-index: 1;
   transition: var(--transition);
 }
 .timeline-item:hover .timeline-dot {
-  background: var(--clr-cyan);
+  background: var(--lime);
   transform: translate(-50%, -50%) scale(1.4);
 }
 
 .timeline-card {
-  background: var(--clr-surface);
-  border: 1px solid var(--clr-border);
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 24px 28px;
-  backdrop-filter: blur(10px);
   transition: var(--transition);
   max-width: 380px;
 }
 .timeline-item:hover .timeline-card {
-  border-color: rgba(0,245,255,0.3);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.4), var(--glow-cyan);
+  border-color: rgba(173,255,47,.3);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4), var(--glow-lime);
   transform: translateY(-4px);
 }
 
 .timeline-date {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--clr-cyan);
+  color: var(--lime);
   margin-bottom: 8px;
   letter-spacing: 0.08em;
 }
 .timeline-title {
   font-size: 1.05rem;
-  color: var(--clr-text);
+  color: var(--white);
   margin-bottom: 4px;
+  font-family: var(--font-display);
+  letter-spacing: .04em;
 }
 .timeline-org {
   font-size: 0.88rem;
-  color: var(--clr-purple-dim);
+  color: var(--ice);
   font-weight: 400;
   margin-bottom: 12px;
+  font-family: var(--font-mono);
+  opacity: .7;
 }
 .timeline-card p {
   font-size: 0.88rem;
-  color: var(--clr-text-muted);
+  color: rgba(197,224,245,.65);
   margin-bottom: 12px;
 }
 
