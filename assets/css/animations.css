@@ -37,7 +37,7 @@
 /* Neon pulse */
 @keyframes pulse-neon {
   0%, 100% { box-shadow: var(--glow-cyan); }
-  50%       { box-shadow: 0 0 40px rgba(255,149,0,0.7), 0 0 80px rgba(255,149,0,0.4); }
+  50%       { box-shadow: 0 0 40px rgba(0,245,255,0.7), 0 0 80px rgba(0,245,255,0.4); }
 }
 
 /* Green pulse */
